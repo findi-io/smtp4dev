@@ -40,7 +40,7 @@ service:
   type: ClusterIP
   port:
     http: 80
-    smtp: 25
+    smpt: 25
 
 ingress:
   enabled: true
@@ -48,7 +48,7 @@ ingress:
   annotations:
     external-dns: "true"
   hosts:
-    - host: smtp4dev.{{.Release.Namespace}}.findi.biz
+    - host: chart-example.local
       paths:
         - path: /
           pathType: ImplementationSpecific
