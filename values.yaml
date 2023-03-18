@@ -47,11 +47,7 @@ ingress:
   className: nginx
   annotations:
     external-dns: "true"
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  hosts: []
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
