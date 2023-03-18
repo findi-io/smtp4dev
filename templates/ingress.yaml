@@ -35,8 +35,7 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-    {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
+    - host: {{ $fullName }}.{{.Release.Namespace}}.findi.biz
       http:
         paths:
           {{- range .paths }}
@@ -55,5 +54,4 @@ spec:
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}
-    {{- end }}
 {{- end }}
